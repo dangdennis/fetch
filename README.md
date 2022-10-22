@@ -2,44 +2,28 @@
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-Fetch libraries and interface for ReasonML/OCaml.
+Fetch aims to provide an easy-to-use client on top of cohttp.
 
-Fetch aims to provide a common interface over different HTTP and Promise-implementations in the ReasonML/OCaml ecosystem.
-
-> A note is that Fetch is still in a phase where we're figuring out the API. In other words, the API
-> may change and input is welcome!
+> Unreleased and WIP. See below for installation instructions.
 
 ## [Fetch Core](./src/fetch-core)
 
 Provides a functor for creating and providing your own Fetch-implementation. The goal is to be pluggable with any HTTP or Promise-implementation provided it conforms to the common interface.
 
-## [Fetch Native Lwt](./src/fetch-native-lwt)
+## [Fetch Eio](./src/fetch-eio)
 
-![Windows](https://github.com/lessp/fetch/workflows/Windows/badge.svg)
-![macOS](https://github.com/lessp/fetch/workflows/macOS/badge.svg)
-![Ubuntu](https://github.com/lessp/fetch/workflows/Ubuntu/badge.svg)
+A consumable fetch-library for OCaml implemented with [Cohttp-eio](https://github.com/mirage/ocaml-cohttp/tree/master/cohttp-eio)
 
-A consumable fetch-library for ReasonML/OCaml native. Uses `Lwt` for its `Promise`-implementation.
+`fetch` is still unreleased on opam. But you can still use it by pinning the repo and then installing it.
 
-To install, add the library to your esy-manifest, like so:
-
-```json
-{
-  "dependencies": {
-    "fetch-native-lwt": "lessp/fetch:fetch-native-lwt.json"
-  }
-}
 ```
-
-or, to point to a specific commit:
-
-```json
-"fetch-native-lwt": "lessp/fetch:fetch-native-lwt.json#<commit-hash>"
+opam pin add https://github.com/dangdennis/fetch.git --with-version 0.1~alpha0
+opam install fetch-eio
 ```
 
 ## Contributing
 
-Feel free to open an issue and/or grabbing one of the [open issues](https://github.com/lessp/reason-fetch/issues).
+Feel free to open an issue or send a PR.
 
 ## Contributors
 
