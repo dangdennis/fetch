@@ -1,4 +1,4 @@
 (library
- (name fetch)
+ (name fetch_eio)
  (public_name fetch-eio)
- (libraries cohttp cohttp-eio eio_main))
+ (libraries cohttp cohttp-eio eio_main fetch_core))

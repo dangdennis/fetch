@@ -1,6 +1,6 @@
 include Fetchify_signatures
 
-module CreateFetchImplementation (F : FETCH) = struct
+module Create_fetch_implementation (F : FETCH) = struct
   module Headers = Headers
   module Status = Status
   module Method = Method
