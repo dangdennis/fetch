@@ -5,6 +5,10 @@ description: ""
 tags: ["topics" "to describe" "your" "project"]
 depends: [
   "dune" {>= "2.0"}
+  "fetch-core"
+  "cohttp"
+  "cohttp-eio"
+  "eio_main"
 ]
 build: [
   ["dune" "subst"] {pinned}

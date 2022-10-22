@@ -16,6 +16,6 @@
  (name fetch-eio)
  (synopsis "")
  (description "")
- (depends)
+ (depends fetch-core cohttp cohttp-eio eio_main)
  (tags
   (topics "to describe" your project)))
