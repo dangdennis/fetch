@@ -2,8 +2,8 @@
 
 (generate_opam_files true)
 
-(name fetch)
-(version c4a0689-dirty)
+(name fetch-core)
+(version 4ff0789-dirty)
 
 (package
  (name fetch-core)
