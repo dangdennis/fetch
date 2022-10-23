@@ -26,5 +26,5 @@ module type FETCH = sig
     ?headers:Headers.t list ->
     ?meth:Method.t ->
     string ->
-    'a
+    string
 end
