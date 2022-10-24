@@ -19,10 +19,11 @@ module type FETCH = sig
   end
 
   module Config : sig
-    type t
+    type t = { base_url : string option; headers : Headers.t list }
+    [@@deriving make]
   end
 
-  val create : 'a -> Config.t
+  val create : ?base_url:string -> ?headers:Headers.t list -> unit -> Config.t
 
   val fetch :
     ?body:string ->
