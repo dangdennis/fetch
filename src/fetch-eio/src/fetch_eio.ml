@@ -7,7 +7,7 @@ module Fetch_implementation = struct
   exception InvalidRequest of string
 
   module Config = struct
-    type t = { base_url : string option; headers : Headers.t list }
+    type t = { base_url : string option; headers : Headers.t list; hi : string }
     [@@deriving make]
   end
 

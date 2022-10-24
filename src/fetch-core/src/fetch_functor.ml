@@ -7,7 +7,6 @@ module Create_fetch_implementation (F : Fetch_signatures.FETCH) = struct
   module Response = F.Response
   module Config = F.Config
 
-  let create = F.create
   let fetch = F.fetch
   let get = fetch ~meth:`GET
   let post = fetch ~meth:`POST
