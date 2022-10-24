@@ -22,8 +22,6 @@ module type FETCH = sig
     type t
   end
 
-  val create : 'a -> Config.t
-
   val fetch :
     ?body:string ->
     ?headers:Headers.t list ->

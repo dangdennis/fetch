@@ -7,7 +7,7 @@ module Fetch_implementation = struct
   exception InvalidRequest of string
 
   module Config = struct
-    type t = { base_url : string option; headers : Headers.t list }
+    type t = { base_url : string option; headers : Headers.t list; hi : string }
     [@@deriving make]
   end
 
@@ -47,6 +47,7 @@ module Fetch_implementation = struct
       | None -> Cohttp_eio.Body.Empty
     in
 
+    (*  merge headers from config *)
     let headers = Http.Header.of_list headers in
 
     Eio_main.run @@ fun env ->

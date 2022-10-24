@@ -1,3 +1,5 @@
 (library
  (name fetch_core)
- (public_name fetch-core))
+ (public_name fetch-core)
+ (preprocess
+  (pps ppx_deriving.show ppx_deriving.ord ppx_deriving.make)))
