@@ -18,13 +18,17 @@ module type FETCH = sig
     }
   end
 
+  module Config : sig
+    type t
+  end
+
+  val create : 'a -> Config.t
+
   val fetch :
-    ?body:
-      (* ?env:'a ->
-         ?sw:'b -> *)
-      string ->
+    ?body:string ->
     ?headers:Headers.t list ->
     ?meth:Method.t ->
+    Config.t ->
     string ->
     string
 end

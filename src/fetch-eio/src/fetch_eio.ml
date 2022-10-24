@@ -6,6 +6,11 @@ module Fetch_implementation = struct
 
   exception InvalidRequest of string
 
+  module Config = struct
+    type t = { base_url : string option; headers : Headers.t list }
+    [@@deriving make]
+  end
+
   module Body = struct
     type t = string
 
@@ -24,14 +29,17 @@ module Fetch_implementation = struct
       status : Status.t;
       url : string;
     }
-
-    let make ~body ~headers ~status ~url = { body; headers; status; url }
+    [@@deriving make]
   end
 
-  let fetch ?body ?(headers = []) ?(meth = `GET) url =
+  let create = Config.make
+
+  let fetch ?body ?(headers = []) ?(meth = `GET) (config : Config.t) url =
     let { Fetch_core.Request.headers; body; meth; url } =
       Fetch_core.Request.create ~body ~headers ~meth url
     in
+
+    print_endline (config.base_url |> Option.value ~default:"");
 
     let body =
       match body with
