@@ -47,6 +47,7 @@ module Fetch_implementation = struct
       | None -> Cohttp_eio.Body.Empty
     in
 
+    (*  merge headers from config *)
     let headers = Http.Header.of_list headers in
 
     Eio_main.run @@ fun env ->

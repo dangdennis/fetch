@@ -8,12 +8,12 @@ on:
 jobs:
   build:
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         os:
           - macos-latest
-          - ubuntu-latest
-          - windows-latest
+          # - ubuntu-latest
+          # - windows-latest
         ocaml-compiler:
           - ocaml-base-compiler.5.0.0~beta1
 
